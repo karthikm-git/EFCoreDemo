@@ -1,0 +1,30 @@
+﻿@page
+@model EQUniversity.Pages.AboutModel
+@{
+    ViewData["Title"] = "Student Enrollment Statistics";
+}
+
+<h2>Student Enrollment Statistics</h2>
+
+<table style="width:30%;text-align-last: center;">
+    <tr>
+        <th>
+            Enrollment Date
+        </th>
+        <th>
+            Students Count
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Students)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                @item.StudentCount
+            </td>
+        </tr>
+    }
+</table>
